@@ -1,0 +1,9 @@
+alert: welcome
+prompt: name
+alert: 'Welcome' + name
+prompt(s): prompt for two numbers, separately
+alert: 'The sum of your two numbers is: [result]'
+alert: "that is a big number" if greater than 10" else "that is a small number"
+loop: prompt: yes or no to add numbers again.
+    if yes, repeat
+    if no, thanks, and stop
