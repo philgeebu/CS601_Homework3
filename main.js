@@ -1,7 +1,7 @@
 // declaring variables
 let runProgram, userName, num1, num2, sum;
 
-// Click event triggering welcome prompt and addTwoNumbers function
+// Click event triggering mainProgram
 document.getElementById('initiate-button').addEventListener('click', () => mainProgram());
 
 const mainProgram = () => {
@@ -11,9 +11,11 @@ const mainProgram = () => {
         displayLastCalculation(num1, num2, sum, userName)
         runProgram = confirm('Add another set of numbers?')
     } while (runProgram)
+    alert('Thanks for using Phil\'s amazing calculator!')
+    return;
 }
 
-// function that handles the welcome prompt for your name
+// welcome prompt for user's name
 const welcomePrompt = () => {
     alert('Welcome to Phil\'s amazing calculator!')
 
@@ -28,6 +30,7 @@ const welcomePrompt = () => {
     return true;
 };
 
+// prompt for numbers to add
 const calculatePrompt = () => {
 
     do {
@@ -55,10 +58,12 @@ const calculatePrompt = () => {
     return true;
 };
 
+// add two numbers
 const addNumbers = (a, b) => {
     return a + b;
 }
 
+// display last calculation on front-end
 const displayLastCalculation = (num1, num2, sum, userName) => {
     document.getElementById('num1').innerText = num1.toString()
     document.getElementById('num2').innerText = num2.toString()
