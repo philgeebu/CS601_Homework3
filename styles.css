@@ -1,3 +1,24 @@
+body {
+    font-family: sans-serif;
+    text-align: center;
+}
+
 #initiate-button {
-    color: red;
+    background-image: linear-gradient(red, darkred);
+    color: lightgrey;
+    border: none;
+    border-radius: 10px;
+    padding: 1em;
+    font-size: 2rem;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+}
+
+footer {
+    position: fixed;
+    left: 50%;
+    bottom: 5px;
+    transform: translate(-50%, -50%);
+    margin: 0 auto;
 }
