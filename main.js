@@ -1,14 +1,12 @@
-// declaring variables
-let runProgram, userName, num1, num2, sum;
-
 // Click event triggering mainProgram
 document.getElementById('initiate-button').addEventListener('click', () => mainProgram());
 
 const mainProgram = () => {
-    if (!welcomePrompt()) return; // exit if the user clicks "Cancel"
+    let runProgram;
+    let userName = welcomePrompt();
+    if (!userName) return; // exit if the user clicks "Cancel"
     do {
-        if (!calculatePrompt()) return; // exit if the user clicks "Cancel"
-        displayLastCalculation(num1, num2, sum, userName)
+        if (!calculatePrompt(userName)) return; // exit if the user clicks "Cancel"
         runProgram = confirm('Add another set of numbers?')
     } while (runProgram)
     alert('Thanks for using Phil\'s amazing calculator!')
@@ -17,6 +15,7 @@ const mainProgram = () => {
 
 // welcome prompt for user's name
 const welcomePrompt = () => {
+    let userName;
     alert('Welcome to Phil\'s amazing calculator!')
 
     do {
@@ -27,11 +26,12 @@ const welcomePrompt = () => {
 
     alert(`Welcome, ${userName}!`)
 
-    return true;
+    return userName;
 };
 
 // prompt for numbers to add
-const calculatePrompt = () => {
+const calculatePrompt = (userName) => {
+    let num1, num2, sum;
 
     do {
         num1 = prompt('What is the first number?')
@@ -54,6 +54,8 @@ const calculatePrompt = () => {
     } else {
         alert('That is a small number.')
     }
+
+    displayLastCalculation(num1, num2, sum, userName)
 
     return true;
 };
